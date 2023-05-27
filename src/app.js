@@ -7,12 +7,14 @@ const Users = require("./models/users.models");
 const Category = require("./models/categories.models");
 const postRoutes = require("./routes/user.routes");
 const todoRoute = require("./routes/todos.routes");
+const cors = require('cors');
 
 
 initModels();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 8000;
